@@ -1,4 +1,4 @@
-# Fintcture Kata Payment
+# Fintecture Kata Payment
 
 ## Install
 
