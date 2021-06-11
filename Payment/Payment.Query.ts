@@ -1,4 +1,5 @@
 import { View, Q, R, E }          from 'cqes';
+import { NotFound }               from 'cqes-type';
 import * as MySQLView             from 'cqes/helpers/MySQL.View';
 import * as Payment               from './Payment';
 
@@ -9,7 +10,11 @@ export class QueryHandlers extends MySQLView.QueryHandlers {
     ( 'SELECT * FROM `payments` WHERE `paymentId` = ?'
     , [ query.data.paymentId ]
     );
-    return Payment.Payment.from(result, this.logger.warn);
+    if (result.length === 1) {
+      return Payment.Payment.from(result[0], this.logger.warn);
+    } else {
+      return NotFound.from();
+    }
   }
 
 }

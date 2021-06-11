@@ -30,6 +30,7 @@ export class API extends HTTPService {
   GetPayment(req: Request, res: Response) {
     return this.query(Payment.Get, { paymentId: req.params.paymentId })
       .on(Payment.Payment, payment => this.respond(res, 200, payment))
+      .on(NotFound, () => this.respond(res, 404))
       .onError(e => this.respondServerError(res, e));
   }
 
