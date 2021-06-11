@@ -22,7 +22,7 @@ Edit `cqesconfig.yml` and replace database access to your own
 
 ## Compile
 
-Compile typescript
+Compile typescript basecode
 
 ```sh
 tsc
