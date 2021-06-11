@@ -1,0 +1,19 @@
+---
+dev_all:
+  '&:_.Payment:1': {}
+
+
+# ---------------------------------------------
+
+_:
+
+  Payment:
+    services:
+      API:
+        views:   [ Payment.Payment ]
+        HTTP:    { port: 1080 }
+    views:
+      Payment:
+        RpcBus:       { HTTP: { port: 2001 } }
+        MySQL:        { url: 'mysql://dev:dev@localhost/fintecture-kata-payment' }
+

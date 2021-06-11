@@ -1,0 +1,29 @@
+{
+  "name": "fintecture-kata-payment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "scripts": {
+    "dev": "node run dev_all",
+    "clean": "for p in $(cat tsconfig.json | jq -r '.include[]'); do find $p \\( -name '*.js' -o -name '*.js.map' \\) -exec rm -v {} \\;; done",
+    "test": "mocha tests"
+  },
+  "author": "Nicolas Pelletier",
+  "license": "ISC",
+  "_moduleAliases": {
+    "helpers": "helpers",
+    "types": "types"
+  },
+  "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "cqes": "^5.0.3",
+    "cqes-match": "^1.0.0",
+    "cqes-mysql": "^4.0.0",
+    "cqes-type": "^1.0.1",
+    "cqes-util": "^1.0.1",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {}
+}

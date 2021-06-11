@@ -1,0 +1,20 @@
+{ "compilerOptions":
+  { "module": "commonjs"
+  , "moduleResolution": "node"
+  , "lib": ["es2020", "dom"]
+  , "target": "es2017"
+  , "noImplicitAny": true
+  , "removeComments": true
+  , "preserveConstEnums": true
+  , "allowUnreachableCode": true
+  , "allowSyntheticDefaultImports": true
+  , "sourceMap": true
+  , "experimentalDecorators": true
+  , "baseUrl": "."
+  , "paths": { "base/*":    ["./*"]
+             , "helpers/*": ["./helpers/*"]
+             }
+  }
+, "include": [ "Payment" ]
+, "exclude": [ "node_modules", "**/*.spec.ts" ]
+}
